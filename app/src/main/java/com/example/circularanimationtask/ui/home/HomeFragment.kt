@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.circularanimationtask.common.DataUtil
 import com.example.circularanimationtask.databinding.FragmentHomeBinding
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
-import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.utils.ColorTemplate
 
 class HomeFragment : Fragment() {
@@ -33,14 +31,22 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        val dataSet = PieDataSet(DataUtil.entries, "Sections")
+        val dataSet = PieDataSet(DataUtil.dummyEntries, "")
 
         dataSet.colors = ColorTemplate.COLORFUL_COLORS.toMutableList()
         val data = PieData(dataSet)
 
         binding.pieChart.data = data
+        binding.pieChart.data.setDrawValues(false)
+        binding.pieChart.setDrawEntryLabels(false)
 
-        binding.pieChart.animateY(1000)
+        binding.pieChart.setDrawCenterText(false)
+        binding.pieChart.setDrawMarkers(false)
+        binding.pieChart.description.isEnabled = false
+        binding.pieChart.legend.isEnabled = false
+        binding.pieChart.animateY(800)
+
+        binding.titleText.text = "XYTOP"
 
         return binding.root
     }

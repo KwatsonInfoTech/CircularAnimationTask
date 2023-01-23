@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.circularanimationtask.common.DataUtil
@@ -30,12 +29,18 @@ class DashboardFragment : Fragment() {
             ViewModelProvider(this).get(DashboardViewModel::class.java)
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
-        val dataSet = PieDataSet(DataUtil.entries, "Sections")
+        val dataSet = PieDataSet(DataUtil.dummyEntries, "Sections")
 
         dataSet.colors = ColorTemplate.MATERIAL_COLORS.toMutableList()
         val data = PieData(dataSet)
 
         binding.pieChart.data = data
+        binding.pieChart.data.setDrawValues(false)
+        binding.pieChart.setDrawCenterText(false)
+        binding.pieChart.setDrawMarkers(false)
+        binding.pieChart.description.isEnabled = false
+        binding.pieChart.legend.isEnabled = false
+        binding.titleText.text =
 
         binding.pieChart.animateY(1000)
 
