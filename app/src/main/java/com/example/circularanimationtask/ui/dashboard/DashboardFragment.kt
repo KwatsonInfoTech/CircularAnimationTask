@@ -40,7 +40,8 @@ class DashboardFragment : Fragment() {
         binding.pieChart.setDrawMarkers(false)
         binding.pieChart.description.isEnabled = false
         binding.pieChart.legend.isEnabled = false
-        binding.titleText.text =
+
+
 
         binding.pieChart.animateY(1000)
 
