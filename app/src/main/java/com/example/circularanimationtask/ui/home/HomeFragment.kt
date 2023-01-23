@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
 
         val dataSet = PieDataSet(DataUtil.entries, "Sections")
 
-        dataSet.colors = ColorTemplate.VORDIPLOM_COLORS.toMutableList()
+        dataSet.colors = ColorTemplate.COLORFUL_COLORS.toMutableList()
         val data = PieData(dataSet)
 
         binding.pieChart.data = data
