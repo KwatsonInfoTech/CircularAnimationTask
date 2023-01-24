@@ -46,8 +46,6 @@ class HomeFragment : Fragment() {
         binding.pieChart.legend.isEnabled = false
         binding.pieChart.animateY(800)
 
-        binding.titleText.text = "XYTOP"
-
         return binding.root
     }
 

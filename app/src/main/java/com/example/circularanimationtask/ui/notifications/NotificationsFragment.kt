@@ -57,9 +57,6 @@ class NotificationsFragment : Fragment() {
         binding.pieChart2.description.isEnabled = false
         binding.pieChart2.legend.isEnabled = false
 
-
-        binding.titleText.text = "ZESTY!"
-
         return binding.root
     }
 
